@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pokest</title>
+</head>
+<body>
+    <h1>Can you Name all 150??</h1>
+    <section>
+        <ul class = 'pokes'>
+            <% for(let i = 0; i < pokes.length; i++) { %>
+            <li class = 'poke'>
+                <% if(pokes[i].favorite === true) {%>
+                <span class = 'displayName favorite'>Name: <%= pokes[i].name %></span>
+                <span class = 'displayType favorite'>Type: <%= pokes[i].type %></span>
+                <%} else{%>
+                    <span class = 'displayName notFavorite'>Name: <%= pokes[i].name %></span>
+                    <span class = 'displayType notFavorite'>Type: <%= pokes[i].type %></span>
+                    <%}%>
+               
+                <button class = 'deleteBtton'>Delete</button>
+            </li>
+        <%}%>
+        </ul>
+        <h2>Remaining Pokemon:<span><%= -(remaining) + 151   %></span></h2>
+    </section>
+    <section>
+        <form action = "/addPoke" method = "POST">
+            <input type="text" name="addName" id="name" placeholder="put name here">
+            <input type="text" name="addType" id="type" placeholder="put type here">
+            <input type = 'submit'>
+        </form>
+    </section>
+    <script src = 'main.js'></script>
+</body>
+</html>

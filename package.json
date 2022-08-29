@@ -1,6 +1,28 @@
 {
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.18.1"
-  }
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "env": "^0.0.2",
+    "express": "^4.18.1",
+    "mongodb": "^4.9.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "pokemonnameapi",
+  "description": "name all 150",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfvasil/pokemonNameAPI.git"
+  },
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jfvasil/pokemonNameAPI/issues"
+  },
+  "homepage": "https://github.com/jfvasil/pokemonNameAPI#readme"
 }
