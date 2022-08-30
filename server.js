@@ -24,7 +24,7 @@ app.get('/',async (req, res) =>{
     const pokeNames = await db.collection('PokeNames').find().toArray()
     const namesLeft = await db.collection('PokeNames').countDocuments()
     res.render('index.ejs', {pokes: pokeNames, remaining: namesLeft})
-    console.log(res)
+    
 })
 
 app.post('/addPoke', (req, res) =>{
@@ -35,7 +35,7 @@ app.post('/addPoke', (req, res) =>{
      })
 })
 app.put('/makeFav', (req, res) => {
-    db.collection('PokeNames').updateOne({name: req.body.pokeName, type: req.body.pokeType},{
+    db.collection('PokeNames').updateOne({pokeId: req.body.idFromFile},{
         $set: {
             favorite: true
           }

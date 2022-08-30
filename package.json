@@ -8,13 +8,13 @@
     "mongodb": "^4.9.0"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "name": "pokemonnameapi",
   "description": "name all 150",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jfvasil/pokemonNameAPI.git"
@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/jfvasil/pokemonNameAPI/issues"
   },
-  "homepage": "https://github.com/jfvasil/pokemonNameAPI#readme"
+  "homepage": "https://github.com/jfvasil/pokemonNameAPI#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
 }
