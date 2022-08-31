@@ -35,17 +35,33 @@ app.post('/addPoke', (req, res) =>{
      })
 })
 app.put('/makeFav', (req, res) => {
-    db.collection('PokeNames').updateOne({pokeId: req.body.idFromFile},{
+    db.collection('PokeNames').findOneAndUpdate({pokeId: req.body.idFromFile},{
         $set: {
             favorite: true
           }
     },{
-        sort: {_id: -1},
+       
         upsert: false
     })
     .then(result => {
         console.log('Made Favorite')
         res.json('Made Favorite')
+    })
+    .catch(error => console.error(error))
+
+})
+app.put('/makeUnFav', (req, res) => {
+    db.collection('PokeNames').findOneAndUpdate({pokeId: req.body.idFromFile},{
+        $set: {
+            favorite: false
+          }
+    },{
+        
+        upsert: false
+    })
+    .then(result => {
+        console.log('Made Unfavorite')
+        res.json('Made Unfavorite')
     })
     .catch(error => console.error(error))
 

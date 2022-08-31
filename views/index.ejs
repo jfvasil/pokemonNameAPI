@@ -11,19 +11,12 @@
     <h1>Can you Name all 150??</h1>
     <section>
         <ul class = 'pokes'>
-            <% for(let i = 0; i < pokes.length; i++) { %>
-            <li class = 'poke'>
-                <% if(pokes[i].favorite === true) {%>
-                <span class = 'favorite'>Name: <%= pokes[i].name %></span>
-                <span class = 'favorite'>Type: <%= pokes[i].type %></span>
-                <%} else{%>
-                    <span class = "notFavorite">Name: <%= pokes[i].name %></span>
-                    <span class = "notFavorite">Type: <%= pokes[i].type %></span>
-                    <%}%>
-  
-                <button class = "deleteBtton">Delete</button>
-            </li>
-        <%}%>
+            <% pokes.forEach( el => { %>
+                <li class='poke' data-id='<%=el._id%>'>
+                    <span class= '<%= el.favorite === true ? 'favorite' : 'notFavorite'%>'>Name:<%= el.name%>Type:<%=el.type %></span>
+                    <button class = "deleteBtton">Delete</button>
+                </li>
+            <% }) %>  
         </ul>
         <h2>Remaining Pokemon:<span><%= -(remaining) + 151   %></span></h2>
     </section>
@@ -37,3 +30,4 @@
     <script src = 'main.js'></script>
 </body>
 </html>
+
