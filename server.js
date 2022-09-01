@@ -66,6 +66,16 @@ app.put('/makeUnFav', (req, res) => {
     .catch(error => console.error(error))
 
 })
+app.delete('/deleteItem', (req, res) => {
+    db.collection('PokeNames').deleteOne({ pokeId: req.body.idFromFile})
+    .then(result => {
+        console.log('Poke Deleted')
+        response.json('Poke Deleted')
+    })
+    .catch(error => console.error(error))
+
+})
+
 app.listen(process.env.PORT || PORT, ()=>{
     console.log(`Server running on port ${PORT}`)
 })

@@ -14,7 +14,7 @@
             <% pokes.forEach( el => { %>
                 <li class='poke' data-id='<%=el._id%>'>
                     <span class= '<%= el.favorite === true ? 'favorite' : 'notFavorite'%>'>Name:<%= el.name%>Type:<%=el.type %></span>
-                    <button class = "deleteBtton">Delete</button>
+                    <button class = "deleteButton">Delete</button>
                 </li>
             <% }) %>  
         </ul>
