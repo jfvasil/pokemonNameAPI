@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 
 const PokesSchema = new mongoose.Schema({
-  pokeName: {
+  name: {
     type: String,
     required: true,
   },
-  pokeType: {
+  type: {
     type: String,
     required: true
   },
